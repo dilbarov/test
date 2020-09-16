@@ -2,6 +2,8 @@
 
 Документация к react-ui: https://tech.skbkontur.ru/react-ui/#/Readme
 
+0. Создай новую ветку из master и назови ее своей фамилией на транслите
+
 1. Установи зависимости командой yarn install
 
 2. Напиши тело функции generateInn, которая принимает значение type
