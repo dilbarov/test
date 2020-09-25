@@ -30,14 +30,20 @@ const validInn = (inn) => {
           else {
             return false;
           }
+}
 
-          
-
+const validKpp = (kpp) => {
+  const arrKpp = kpp.split('')
+    if (arrKpp[5] === 0 && arrKpp[6] === 1 || arrKpp[5] === 4 && arrKpp[6] === 5 || arrKpp[5] === 5 && arrKpp[6] === 0) {
+      return false;
+    } else {
+      return true;
+    }
 
 
 }
 
-const randomNumber = (size) => {
+const randomInn = (size) => {
     let i = Math.random().toString().slice(2, size);
     let valid = validInn(i);
     
@@ -54,22 +60,39 @@ const randomNumber = (size) => {
 
     }
     
-    console.log([i,valid]);
+    
     return i;
   } 
+
+  const randomKpp = () => {
+
+
+    let kpp = Math.random().toString().slice(2, 11);
+    let  valid = validKpp(kpp);
+
+    while (valid === false) {
+      kpp = Math.random().toString().slice(2, 11);
+      valid = validKpp(kpp);
+      if(valid === true) {
+        break;
+      }
+    }
+    return kpp;
+
+  }
 
  
 
 export const generateInn = (type) => {
 
     if (type === 'ul') {
-        const ul =  randomNumber(12)
+        const ul =  randomInn(12)
     
         return ul;
   
         
      } else  if (type === 'fl' ){
-       const fl =  randomNumber(14)
+       const fl =  randomInn(14)
           
         return fl;
    
@@ -77,8 +100,10 @@ export const generateInn = (type) => {
 };
 
 export const generateKpp = ()=> {
-    const i = Math.random().toString().slice(2, 11);
-    return i;
+  const kpp = randomKpp();
+
+  return kpp;
+    
 };
 
 
