@@ -1,6 +1,6 @@
 import chai from "chai";
-import { checkExpressionForNumber, validateInn, validateKpp } from "../tools/common.tools";
-import { generateInn, generateKpp } from "../utils/generator.utils";
+import { checkExpressionForNumber, validateInn, validateKpp } from "../src/tools/common.tools";
+import { generateInn, generateKpp } from "../src/utils/generator.utils";
 
 const expect = chai.expect;
 
